@@ -9,6 +9,13 @@ dependencies = [
     "fastapi",
     "uvicorn"
 ]
+classifiers = [
+    "Development Status :: 3 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12"
+]
 authors = [
     {name = "Lingqiao Zhao", email = "forever.3g@hotmail.com"},
     {name = "Jiaying Zhong", email = "zhongjiaying020@gmail.com"}
