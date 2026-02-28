@@ -16,7 +16,7 @@ A lightweight FastAPI-based framework that can be used like Spring Boot, with bu
 ## Install (editable)
 
 ```bash
-pip install -e .
+pip install sprintapi
 ```
 
 ## Quick start
@@ -68,36 +68,10 @@ Hello, World!
 > python main.py
 ```
 
-Then open:
-
-- `GET http://localhost/app/name`
-
-This example shows:
-
-- `Configuration` reading from env vars via field aliases.
-- `Service` registered with `@service` and injected into a `Controller`.
-
-## API docs UI
-
-Enable built-in docs with `enable_docs=True` when creating the server:
-
-```python
-from sprintapi import SprintApiServer
-
-server = SprintApiServer(enable_docs=True, app_name="Sprintapi", version="0.1.0")
-server.run()
+Then open `http://localhost/app/name` in your browser and you will see:
 ```
-
-Then open:
-
-- `http://localhost/docs` (Swagger UI)
-- `http://localhost/redoc` (Redoc)
-
-## Project layout
-
-- `src/sprintapi/` core package
-- `examples/hello-world/` minimal controller example
-- `examples/with-di/` DI + config + service lifecycle example
+This app is My Demo
+```
 
 ## License
 

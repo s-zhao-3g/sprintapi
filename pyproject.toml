@@ -8,6 +8,9 @@ dependencies = [
     "fastapi",
     "uvicorn"
 ]
+authors = [
+    {name = "Lingqiao Zhao", email = "forever.3g@hotmail.com"}
+]
 
 [tool.setuptools]
 package-data = { "gw_luna" = [
