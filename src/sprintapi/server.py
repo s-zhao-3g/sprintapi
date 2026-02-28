@@ -11,7 +11,7 @@ from .controller import get_controller_types
 from .logging import get_sprintapi_logger
 from .middleware import CorsMiddleware
 from .middleware.error_handler import register_sprintapi_errors
-from .service import get_async_service_types
+from .service import get_service_types
 from .utility.di import DependencyContainer
 
 
@@ -48,7 +48,7 @@ class SprintApiServer(uvicorn.Server):
         for c in self._controller_types:
             self._di_container.register(c, c, is_singleton=True)
 
-        service_types = get_async_service_types()
+        service_types = get_service_types()
         for s in service_types:
             self._di_container.register(s, s, is_singleton=True)
 
