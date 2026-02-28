@@ -25,8 +25,8 @@ _static_dir = importlib.resources.files('sprintapi') / 'static'
 class SprintApiServer(uvicorn.Server):
     def __init__(
             self,
-            host: str,
-            port: int,
+            host: str = '0.0.0.0',
+            port: int = 80,
             /,
             enable_docs: bool = False,
             app_name: str = None,
