@@ -1,3 +1,5 @@
+import logging
+
 import fastapi
 import importlib.resources
 import uvicorn
@@ -31,11 +33,13 @@ class SprintApiServer(uvicorn.Server):
             enable_docs: bool = False,
             app_name: str = None,
             version: str = None,
+            uvicorn_log_level: int = logging.INFO
     ):
         super().__init__(config=uvicorn.Config(
             app=self._setup_app(app_name, version),
             host=host,
-            port=port
+            port=port,
+            log_level=uvicorn_log_level
         ))
         self._app_name = app_name
         self._app.add_middleware(CorsMiddleware)
