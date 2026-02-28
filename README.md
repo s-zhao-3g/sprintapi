@@ -1,15 +1,13 @@
-# Sprintapi
+# SprintAPI Framework
 
-Sprintapi is a small FastAPI-based framework that adds decorator-driven controllers,
-a lightweight dependency injection container, and simple config/service lifecycles.
+A lightweight FastAPI-based framework that can be used like Spring Boot, with built-in dependency injection and lifecycle management.
 
-## Features
-
-- Controller classes with route decorators (`@api_route`, `@get_mapping`, etc.).
-- DI container that resolves constructor dependencies by type hints.
-- Configuration models loaded from environment variables.
-- Service lifecycle hooks (`init`, `start`, `stop`).
-- Optional built-in Swagger UI and Redoc endpoints.
+## Core features
+- **Configuration via environment variables** over config file,
+    which is friendly to containerized deployments and 12-factor apps;
+- **Built-in dependency injection**, which enables IoC and better handles dependency management for larger apps;
+- **Controller-based API design**, which is more intuitive for developers coming from other languages;
+- **Lifecycle hooks** called on same event loop as the server, and are called in dependency order;
 
 ## Requirements
 
@@ -23,6 +21,8 @@ pip install -e .
 
 ## Quick start
 
+Below is a minimal example of a controller exposing a single GET endpoint.
+
 ```python
 # main.py
 
@@ -31,12 +31,16 @@ from sprintapi import SprintApiServer, api_route, get_mapping, Controller
 
 @api_route('/simple')
 class SimpleController(Controller):
+    """A minimal controller exposing a single GET endpoint."""
+
     @get_mapping('hello')
     async def hello(self):
+        """Return a simple greeting."""
         return 'Hello, World!'
 
 
 def main():
+    # Create and run the server; pass `port=8000` to change the default.
     server = SprintApiServer()
     server.run()
 
