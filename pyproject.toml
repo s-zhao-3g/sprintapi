@@ -1,0 +1,16 @@
+[project]
+name = "sprintapi"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2",
+    "fastapi",
+    "uvicorn"
+]
+
+[tool.setuptools]
+package-data = { "gw_luna" = [
+    "static/redoc/*",
+    "static/swagger-ui/*"
+] }
