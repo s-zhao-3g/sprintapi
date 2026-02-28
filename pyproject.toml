@@ -1,7 +1,8 @@
 [project]
 name = "sprintapi"
 version = "0.1.0"
-description = "Add your description here"
+description = "A lightweight FastAPI-based framework that can be used like Spring Boot, with built-in dependency injection and lifecycle management."
+readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pydantic>=2",
@@ -9,7 +10,8 @@ dependencies = [
     "uvicorn"
 ]
 authors = [
-    {name = "Lingqiao Zhao", email = "forever.3g@hotmail.com"}
+    {name = "Lingqiao Zhao", email = "forever.3g@hotmail.com"},
+    {name = "Jiaying Zhong", email = "zhongjiaying020@gmail.com"}
 ]
 
 [tool.setuptools]
@@ -17,3 +19,7 @@ package-data = { "gw_luna" = [
     "static/redoc/*",
     "static/swagger-ui/*"
 ] }
+
+[project.urls]
+Homepage = "https://github.com/s-zhao-3g/sprintapi"
+Repository = "https://github.com/s-zhao-3g/sprintapi"
