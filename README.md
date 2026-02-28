@@ -13,7 +13,7 @@ A lightweight FastAPI-based framework that can be used like Spring Boot, with bu
 
 - Python 3.12+
 
-## Install (editable)
+## Install
 
 ```bash
 pip install sprintapi
