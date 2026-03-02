@@ -1,6 +1,6 @@
 [project]
 name = "sprintapi"
-version = "0.1.1"
+version = "0.1.2"
 description = "A lightweight FastAPI-based framework that can be used like Spring Boot, with built-in dependency injection and lifecycle management."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -22,7 +22,7 @@ authors = [
 ]
 
 [tool.setuptools]
-package-data = { "gw_luna" = [
+package-data = { "sprintapi" = [
     "static/redoc/*",
     "static/swagger-ui/*"
 ] }
