@@ -33,7 +33,8 @@ class SprintApiServer(uvicorn.Server):
             enable_docs: bool = False,
             app_name: str = None,
             version: str = None,
-            uvicorn_log_level: int = logging.INFO
+            uvicorn_log_level: int = logging.INFO,
+            doc_with_google_fonts: bool = True,
     ):
         super().__init__(config=uvicorn.Config(
             app=self._setup_app(app_name, version),
@@ -44,6 +45,7 @@ class SprintApiServer(uvicorn.Server):
         self._app_name = app_name
         self._app.add_middleware(CorsMiddleware)
         self._controller_types = get_controller_types()
+        self._doc_with_google_fonts = doc_with_google_fonts
 
         # component registration
         self._di_container = DependencyContainer()
@@ -93,6 +95,7 @@ class SprintApiServer(uvicorn.Server):
             openapi_url=self._app.openapi_url,
             title=f'{self._app_name} - Redoc' if self._app_name else 'Redoc',
             redoc_js_url='/static/redoc/redoc.standalone.js',
+            with_google_fonts=self._doc_with_google_fonts
         )
 
     def _swagger_ui_html(self):
